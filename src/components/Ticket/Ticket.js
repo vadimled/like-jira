@@ -5,8 +5,8 @@ import {Card, CardBody, CardSubtitle, CardText, CardTitle, Fade} from "reactstra
 const ticket = props => {
   const {summary, description, id} = props;
   return (
-    <Fade>
-      <Card className="card-wrapper">
+    <Fade className="card-wrapper">
+      <Card>
         <CardBody>
           <CardTitle>{summary}</CardTitle>
           <CardText>{description}</CardText>
