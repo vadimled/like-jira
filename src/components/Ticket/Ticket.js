@@ -1,18 +1,20 @@
 import React from "react";
 import './style.scss';
-import {Button, Card, CardBody, CardImg, CardSubtitle, CardText, CardTitle} from "reactstrap";
+import {Card, CardBody, CardSubtitle, CardText, CardTitle, Fade} from "reactstrap";
 
 const ticket = props => {
-  const {summary, description, id } = props;
-  return  (
-    <Card className="card-wrapper">
-      <CardBody>
-        <CardTitle>{summary}</CardTitle>
-        <CardText>{description}</CardText>
-        <CardSubtitle><span>ID</span>{id}</CardSubtitle>
-      </CardBody>
-    </Card>
- )
+  const {summary, description, id} = props;
+  return (
+    <Fade>
+      <Card className="card-wrapper">
+        <CardBody>
+          <CardTitle>{summary}</CardTitle>
+          <CardText>{description}</CardText>
+          <CardSubtitle><span>ID</span>{id}</CardSubtitle>
+        </CardBody>
+      </Card>
+    </Fade>
+  )
 };
 
 export default ticket;

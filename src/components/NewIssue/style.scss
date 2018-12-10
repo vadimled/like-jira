@@ -1,0 +1,17 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 44vw;
+  height: auto;
+  background-color: #f4f4f8;
+  padding: 25px;
+
+}
+.newissue-header {
+  display: block;
+  height: 1.5em;
+  font-size: 2em;
+  padding-bottom: 0.5em;
+  border-bottom: #c1c1c4 1px solid;
+  margin-bottom: 25px;
+}

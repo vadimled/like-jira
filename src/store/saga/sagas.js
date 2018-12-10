@@ -13,7 +13,7 @@ export function* fetchDatabaseSaga() {
     }
 }
 
-/*
+
 export function* setNewEntrySaga(action) {
     try {
         const result = yield call(setNewEntryApi, action.payload);
@@ -23,7 +23,7 @@ export function* setNewEntrySaga(action) {
         yield put({type: actionTypes.DB_ADD_NEW_ENTRY_FAILED, payload: error.message});
     }
 }
-
+/*
 export function* deleteEntrySaga(action) {
     yield put(actions.setToolBarActive);
     try {

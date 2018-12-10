@@ -17,9 +17,7 @@ class App extends Component {
     return (
       <Fragment>
         <div className="container">
-          <Row>
-            <Header/>
-          </Row>
+          <Header/>
           {
             this.props.isLoading ?
               <Spinner/>

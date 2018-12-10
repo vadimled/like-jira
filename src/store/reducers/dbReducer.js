@@ -25,9 +25,11 @@ const dbReducer = createReducer(initialState, {
   },
   [types.DB_ADD_NEW_ENTRY_SUCCESS]: (state, {type, payload}) => {
     const newItem = {...state.tickets, [payload.id]: payload.data};
+    const newBuckets = getBucketsContent(newItem);
     return {
       ...state,
-      tickets: newItem
+      tickets: newItem,
+      buckets: {...newBuckets},
     }
   },
   [types.DB_SET_ERROR]: (state, {type, payload}) => {

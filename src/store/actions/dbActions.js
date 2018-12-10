@@ -1,12 +1,10 @@
 import * as types from '../../store/actionTypes'
 
-
 export function fetchDB() {
   return{
     type: types.DB_FETCH
   }
 }
-
 
 export function setDatabaseToStore(dataArray) {
   return {
@@ -25,13 +23,6 @@ export function addDBEntry(data) {
 export function addNewEntryToStore(data) {
   return {
     type: types.DB_ADD_NEW_ENTRY_SUCCESS,
-    payload: data
-  }
-}
-
-export function setDbError(data) {
-  return {
-    type: types.DB_SET_ERROR,
     payload: data
   }
 }
