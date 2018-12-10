@@ -1,7 +1,7 @@
-import {call, put, race} from 'redux-saga/effects';
+import {call, put} from 'redux-saga/effects';
 import * as actions from "../actions/dbActions";
 import * as actionTypes from "../actionTypes";
-import {deleteEntryApi, editEntryApi, fetchDatabaseApi, setNewEntryApi} from "../../Api";
+import {editEntryApi, fetchDatabaseApi, setNewEntryApi} from "../../Api";
 
 export function* fetchDatabaseSaga() {
     try {

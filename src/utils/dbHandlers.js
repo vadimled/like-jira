@@ -8,7 +8,7 @@ export function getBucketsContent(tickets) {
   if (!tickets) return res;
   
   for (let ticket in  tickets) {
-     switch (tickets[ticket].status) {
+    switch (tickets[ticket].status) {
       case "open":
         res.open.push(ticket);
         break;
@@ -17,6 +17,8 @@ export function getBucketsContent(tickets) {
         break;
       case "done" :
         res.done.push(ticket);
+        break;
+      default:
         break;
     }
   }

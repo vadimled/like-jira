@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import { Input, Form, FormGroup, Label, Col, Button } from 'reactstrap';
+import {Input, Form, FormGroup, Label, Col, Button} from 'reactstrap';
 import './style.scss';
 import * as actions from "../../store/actions/dbActions";
 import {connect} from "react-redux";
@@ -10,7 +10,7 @@ class NewIssue extends Component {
     e.preventDefault();
     const obj = {};
     const {onCancel} = this.props;
-  
+    
     for (let input in e.target) {
       if (e.target[input]) {
         switch (e.target[input].name) {
@@ -23,6 +23,8 @@ class NewIssue extends Component {
           case 'severity':
             obj['severity'] = e.target[input].value;
             break;
+          default:
+            break;
         }
       }
     }
@@ -33,11 +35,11 @@ class NewIssue extends Component {
     onCancel()
   };
   
-   render() {
+  render() {
     const {onCancel} = this.props;
     return (
       <Fragment>
-         <div className="form-wrapper">
+        <div className="form-wrapper">
           <div className="newissue-header">New Issue</div>
           <Form onSubmit={this.submitForm}>
             <FormGroup row>
@@ -64,7 +66,7 @@ class NewIssue extends Component {
               </Col>
             </FormGroup>
             <Button className="mr-2" type="submit" color="primary">Save</Button>
-            <Button onClick={onCancel} >Cancel</Button>
+            <Button onClick={onCancel}>Cancel</Button>
           </Form>
         </div>
       </Fragment>
@@ -78,4 +80,4 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(null ,mapDispatchToProps)(NewIssue);
+export default connect(null, mapDispatchToProps)(NewIssue);
