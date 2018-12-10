@@ -9,8 +9,7 @@ const ticket = props => {
       <CardBody>
         <CardTitle>{summary}</CardTitle>
         <CardText>{description}</CardText>
-        <CardSubtitle>{id}</CardSubtitle>
-        
+        <CardSubtitle><span>ID</span>{id}</CardSubtitle>
       </CardBody>
     </Card>
  )

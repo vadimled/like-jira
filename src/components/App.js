@@ -5,7 +5,7 @@ import TicketsBucket from './TicketsBucket';
 import {connect} from "react-redux";
 import * as actions from "../store/actions/dbActions";
 import Spinner from "./Spinner";
-
+import Header from "./Header";
 
 class App extends Component {
   constructor(props) {
@@ -16,17 +16,22 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        {this.props.isLoading ?
-          <Spinner/>
-          :
-          <div className="container">
-            <Row>
-              <Col><TicketsBucket id="open" title="Open"/></Col>
-              <Col><TicketsBucket id="progress" title="In-Progress"/></Col>
-              <Col><TicketsBucket id="done" title="Done"/></Col>
-            </Row>
-          </div>
-        }
+        <div className="container">
+          <Row>
+            <Header/>
+          </Row>
+          {
+            this.props.isLoading ?
+              <Spinner/>
+              :
+              <Row>
+                <Col><TicketsBucket id="open" title="Open"/></Col>
+                <Col><TicketsBucket id="progress" title="In-Progress"/></Col>
+                <Col><TicketsBucket id="done" title="Done"/></Col>
+              </Row>
+            
+          }
+        </div>
       </Fragment>
     );
   }
