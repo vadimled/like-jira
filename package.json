@@ -2,8 +2,6 @@
   "name": "like-jira",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
-  "private": true,
   "homepage": "https://vadimled.github.io/like-jira/",
   "dependencies": {
     "axios": "^0.18.0",
