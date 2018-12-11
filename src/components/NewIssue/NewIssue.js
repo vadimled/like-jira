@@ -12,7 +12,7 @@ class NewIssue extends Component {
     const {onCancel} = this.props;
     
     for (let input in e.target) {
-      if (e.target[input]) {
+      if (e.target.hasOwnProperty(input)) {
         switch (e.target[input].name) {
           case 'summary':
             obj['summary'] = e.target[input].value;
@@ -45,14 +45,14 @@ class NewIssue extends Component {
             <FormGroup row>
               <Label for="summary" sm={2}>Summary</Label>
               <Col sm={10}>
-                <Input className="ml-2" type="text" name="summary" id="summary" placeholder="Summary..."/>
+                <Input className="ml-2" type="text" name="summary" id="summary" placeholder="Summary..." required/>
               </Col>
             </FormGroup>
             <FormGroup row>
               <Label for="description" sm={2}>Description</Label>
               <Col sm={10}>
                 <Input className="ml-2" type="textarea" name="description" id="description"
-                       placeholder="Description ..."/>
+                       placeholder="Description ..." required/>
               </Col>
             </FormGroup>
             <FormGroup row>
