@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import './style.scss';
 import {connect} from "react-redux";
-import Header from "../Header/Header";
-import Spinner from "../Spinner";
-import TicketsBucket from "../TicketsBucket/TicketsBucket";
+import Header from "../../components/Header";
+import Spinner from "../../components/Spinner";
+import TicketsBucket from "../../components/TicketsBucket";
 import * as actions from "../../store/actions/dbActions";
 import {Col, Row} from 'reactstrap';
 

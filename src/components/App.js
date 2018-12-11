@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import './App.scss';
-import Tickets from "./Tickets";
-import Login from "./Login";
+import Tickets from "../pages/Tickets";
+import Login from "../pages/Login";
 
 class App extends Component {
   
