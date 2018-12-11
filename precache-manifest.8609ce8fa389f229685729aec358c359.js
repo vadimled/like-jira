@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/like-jira/static/css/1.97df014e.chunk.css"
   },
   {
-    "revision": "64da6b6b118bb33c528cbce635a26c83",
+    "revision": "3f31c5db2dfd1c421084286d9376fa56",
     "url": "/like-jira/index.html"
   }
 ];
