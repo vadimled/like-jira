@@ -13,7 +13,6 @@ export function* fetchDatabaseSaga() {
     }
 }
 
-
 export function* setNewEntrySaga(action) {
     try {
         const result = yield call(setNewEntryApi, action.payload);
