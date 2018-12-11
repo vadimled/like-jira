@@ -23,35 +23,8 @@ export function* setNewEntrySaga(action) {
         yield put({type: actionTypes.DB_ADD_NEW_ENTRY_FAILED, payload: error.message});
     }
 }
-/*
-export function* deleteEntrySaga(action) {
-    yield put(actions.setToolBarActive);
-    try {
-        yield call(deleteEntryApi, action.payload);
-        yield put(actions.deleteDataFromStore(action.payload))
-    } catch (error) {
-        yield put({type: actionTypes.DB_DELETE_ITEM_FAILED, payload: error.message});
-    }
-}
-
-export function* deleteCategorySaga(action) {
-    try {
-        for (const i in action.payload) {
-            if (action.payload.hasOwnProperty(i)) {
-                yield race({
-                    key1: call(deleteEntryApi, action.payload[i]),
-                    key2: put(actions.deleteDataFromStore(action.payload[i]))}
-                )
-            }
-        }
-        yield put(actions.setToolBarActive);
-    } catch (error) {
-        put({type: actionTypes.DB_DELETE_CATEGORY_FAILED, payload: error.message});
-    }
-}
 
 export function* editEntrySaga(action) {
-    yield put(actions.setToolBarActive);
     try {
         yield call(editEntryApi, action.payload);
         yield put(actions.editEntryInStore((action.payload)));
@@ -60,4 +33,3 @@ export function* editEntrySaga(action) {
     }
 }
 
-*/

@@ -6,17 +6,32 @@ export function fetchDB() {
   }
 }
 
-export function setDatabaseToStore(dataArray) {
-  return {
-    type: types.DB_FETCH_SUCCESS,
-    payload: dataArray
-  }
-}
-
 export function addDBEntry(data) {
   return {
     type: types.DB_ADD_NEW_ENTRY,
     payload: data
+  }
+}
+
+export function editDBItem(data) {
+  return {
+    type: types.DB_EDIT_ITEM,
+    payload: data
+  }
+}
+
+export function editEntryInStore(data) {
+  return {
+    type: types.DB_EDIT_ITEM_SUCCESS,
+    payload: data
+  }
+  
+}
+
+export function setDatabaseToStore(dataArray) {
+  return {
+    type: types.DB_FETCH_SUCCESS,
+    payload: dataArray
   }
 }
 

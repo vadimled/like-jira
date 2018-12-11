@@ -5,7 +5,7 @@
       "severity": "medium",
       "summary": "Sub-task of TEST-101",
       "description": "Don't forget to do this too.",
-      "created": "Sun Dec 10 2018 18:35:41",
+      "created": "2018-12-10T10:36:22.804Z",
       "updated": ""
     },
     "-LBkKCArXGJ3Q8r78rrL": {
@@ -13,7 +13,7 @@
       "severity": "medium",
       "summary": "Cheese v1 2.0 issue",
       "description": "A task that needs to be done.",
-      "created": "Sun Dec 10 2018 18:35:41",
+      "created": "2018-12-10T10:36:22.804Z",
       "updated": ""
     },
     "-LBkKCAyrsu5DfbeSbbJ": {
@@ -21,7 +21,7 @@
       "severity": "low",
       "summary": "Identity beta customers",
       "description": "A task that needs to be done.",
-      "created": "Sun Dec 10 2018 18:35:41",
+      "created": "2018-12-10T10:36:22.804Z",
       "updated": ""
     },
     "-LBkKCAzwF4IIFlomTkE": {
@@ -29,7 +29,7 @@
       "severity": "high",
       "summary": "Sub-task of TEST-101",
       "description": "Don't forget to do this too.",
-      "created": "Sun Dec 10 2018 18:35:41",
+      "created": "2018-12-10T10:36:22.804Z",
       "updated": ""
     },
     "-LBkKC88VkVGlSZZJU3S": {
@@ -37,7 +37,7 @@
       "severity": "high",
       "summary": "Identity beta testers",
       "description": "A task that needs to be done.",
-      "created": "Sun Dec 10 2018 18:35:41",
+      "created": "2018-12-10T10:36:22.804Z",
       "updated": ""
     },
     "-LBkKCAZFmWdWDKGyyqf": {
@@ -45,7 +45,7 @@
       "severity": "high",
       "summary": "Implement in-app analytics",
       "description": "Don't forget to do this too.",
-      "created": "Sun Dec 10 2018 18:35:41",
+      "created": "2018-12-10T10:36:22.804Z",
       "updated": ""
     }
   }

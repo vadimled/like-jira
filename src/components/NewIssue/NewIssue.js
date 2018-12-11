@@ -30,7 +30,7 @@ class NewIssue extends Component {
     }
     obj['status'] = "open";
     obj['updated'] = "";
-    obj['created'] = new Date();
+    obj['created'] = new Date().toISOString();
     this.props.addEntry(obj);
     onCancel()
   };
