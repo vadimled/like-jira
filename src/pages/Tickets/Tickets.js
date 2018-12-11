@@ -10,9 +10,12 @@ import {Col, Row} from 'reactstrap';
 class Tickets extends Component {
   constructor(props) {
     super(props);
-    this.props.fetchDb();
+    
     if(this.props.history.action === 'POP'){
       this.props.history.push('/')
+    }
+    else{
+      this.props.fetchDb();
     }
   }
   
