@@ -11,13 +11,16 @@ import {
 import Portal from '../Portal';
 import NewIssue from "../NewIssue";
 import './style.scss';
+import {connect} from "react-redux";
+import * as actions from "../../store/actions/dbActions";
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
-      isPortal: false
+      isPortal: false,
+      search: ""
     };
   }
   
@@ -35,6 +38,15 @@ export default class Header extends React.Component {
     this.setState({isPortal: false})
   };
   
+  onChangeHandler = (e) => {
+    this.setState({search: e.target.value})
+  };
+  
+  onFindHandler = () => {
+    this.props.onFind(this.state.search);
+  };
+  
+  
   render() {
     return (
       <Fragment>
@@ -44,15 +56,17 @@ export default class Header extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink color="light" href="https://github.com/vadimled/like-jira">GitHub</NavLink>
+                <NavLink color="link" href="https://github.com/vadimled/like-jira">GitHub</NavLink>
               </NavItem>
               <NavItem className="ml-3">
                 <Button color="success" onClick={this.clickHandler}>Create</Button>
               </NavItem>
               <NavItem className="ml-3">
                 <InputGroup>
-                  <InputGroupAddon addonType="prepend">?</InputGroupAddon>
-                  <Input placeholder="Search..."/>
+                  <InputGroupAddon addonType="prepend">
+                    <Button onClick={this.onFindHandler}>Find</Button>
+                  </InputGroupAddon>
+                  <Input placeholder="Search..." onChange={this.onChangeHandler}/>
                 </InputGroup>
               </NavItem>
             </Nav>
@@ -67,5 +81,11 @@ export default class Header extends React.Component {
       </Fragment>
     );
   }
-  
 }
+ const mapDispatchToProps = dispatch => {
+    return {
+      onFind: (str) => dispatch(actions.onFindTickets(str))
+    }
+  };
+  
+export default connect(null, mapDispatchToProps)(Header)

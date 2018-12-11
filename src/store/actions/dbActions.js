@@ -34,3 +34,10 @@ export function setLoading(status) {
   }
 }
 
+export function onFindTickets(str) {
+  return {
+    type: types.ON_FIND_TICKETS,
+    payload: str
+  }
+}
+

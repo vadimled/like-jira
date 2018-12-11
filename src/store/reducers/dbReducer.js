@@ -29,7 +29,7 @@ const dbReducer = createReducer(initialState, {
     return {
       ...state,
       tickets: newItem,
-      buckets: {...newBuckets},
+      buckets: {...newBuckets}
     }
   },
   [types.DB_SET_ERROR]: (state, {type, payload}) => {
@@ -42,6 +42,13 @@ const dbReducer = createReducer(initialState, {
     return {
       ...state,
       loading: payload
+    }
+  },
+  [types.ON_FIND_TICKETS]: (state, {type, payload}) => {
+    const newBuckets = getBucketsContent(state.tickets, payload);
+     return {
+      ...state,
+      buckets: {...newBuckets},
     }
   }
 });

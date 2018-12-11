@@ -1,76 +1,52 @@
-export function getBucketsContent(tickets) {
-  let res = {
+function getSelectedIDs(filteredTickets) {
+  let ticketsIDs = {
+    open: [],
+    progress: [],
+    done: []
+  };
+  for (let id in filteredTickets) {
+    if (filteredTickets.hasOwnProperty(id)) {
+      switch (filteredTickets[id].status) {
+        case "open":
+          ticketsIDs.open.push(id);
+          break;
+        case "progress":
+          ticketsIDs.progress.push(id);
+          break;
+        case "done" :
+          ticketsIDs.done.push(id);
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  return ticketsIDs;
+}
+
+export function getBucketsContent(tickets, filter = null) {
+  let ticketsIDs = {
     open: [],
     progress: [],
     done: []
   };
   
-  if (!tickets) return res;
+  if (!tickets) return ticketsIDs;
   
-  for (let ticket in  tickets) {
-    switch (tickets[ticket].status) {
-      case "open":
-        res.open.push(ticket);
-        break;
-      case "progress":
-        res.progress.push(ticket);
-        break;
-      case "done" :
-        res.done.push(ticket);
-        break;
-      default:
-        break;
+  const filteredTickets = {};
+  
+  if (filter && filter.length > 0) {
+    for (let ticket in  tickets) {
+      if (tickets.hasOwnProperty(ticket)) {
+        if (tickets[ticket].description.indexOf(filter) !== -1 ||
+          tickets[ticket].summary.indexOf(filter) !== -1) {
+          filteredTickets[ticket] = tickets[ticket];
+        }
+      }
     }
   }
-  return res;
+  ticketsIDs = (Object.keys(filteredTickets).length !== 0) ? getSelectedIDs(filteredTickets) : getSelectedIDs(tickets);
+  
+  return ticketsIDs;
 }
-
-/*export function getCountriesList(data) {
-    const arr = [];
-
-    if(!data) {
-        return arr;
-    }
-
-    for (let item in data) {
-
-        if (arr.length === 0) {
-            arr.push([item, data[item].country_name])
-        }
-        else {
-            const isRepeat = arr.some(val => data[item].country_name === val[1]);
-            !isRepeat && arr.push([item, data[item].country_name])
-        }
-
-    }
-    return arr;
-}
-
-export function getCitiesList(data) {
-    return data && Object.keys(data).map(val => [val, data[val].city]);
-}
-
-export function getCitiesListByCountry(data, country) {
-    return data && Object.keys(data).filter(val =>
-        data[val].country_name === country && [val, data[val].city]).map(val => [val, data[val].city]);
-}
-
-export function getLocation(data, id) {
-    const arr = Object.keys(data).filter(val => val === id && data[val]);
-    let i = arr[0];
-    return {...data[arr], ...{id: i}};
-}
-export function getArray(data, param) {
-    let arr = [];
-
-    if (param != null) {
-        arr = getCitiesListByCountry(data, param);
-    }
-    else {
-        arr = getCitiesList(data);
-    }
-    return arr;
-}
-*/
-
 

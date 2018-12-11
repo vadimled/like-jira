@@ -1,12 +1,18 @@
 .form-wrapper {
   display: flex;
   flex-direction: column;
-  width: 44vw;
+  width: 30vw;
   height: auto;
   background-color: #f4f4f8;
   padding: 25px;
-
+  @media all and (max-width: 1640px) {
+    width: 40vw;
+  }
+  @media all and (max-width: 1080px) {
+    width: 50vw;
+  }
 }
+
 .newissue-header {
   display: block;
   height: 1.5em;
