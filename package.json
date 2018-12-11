@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://vadimled.github.io/like-jira/",
+  "homepage": "https://vadimled.github.io/like-jira",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
