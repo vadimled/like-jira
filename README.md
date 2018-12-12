@@ -26,6 +26,6 @@ Accordingly the task requarment the two users can be loged-in and inserted hardc
 
 When clicking a ticket, the ticket details is showing and in can be edited.
 
-If you change the Status the ticket move to appropriated bracket.
+If you change the Status the ticket will move to appropriated backet.
 
 The searching is case sensitivity
